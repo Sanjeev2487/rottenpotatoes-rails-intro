@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
     def self.get_all_ratings
-        @all_ratings = []
-        self.select('rating').uniq.each {|ele| @all_ratings.push(ele.rating)}
-        @all_ratings.sort.uniq
+        arr = Array.new()
+        self.select('rating').uniq.each {|ele| arr.push(ele.rating)}
+        arr.sort.uniq
     end
 end
